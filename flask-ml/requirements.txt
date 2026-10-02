@@ -1,0 +1,11 @@
+# DFCCIL Flask ML Server — Python 3.10 required
+# Install: py -3.10 -m pip install -r requirements.txt
+
+flask==3.0.3
+flask-cors==4.0.1
+tensorflow==2.18.0
+opencv-python-headless==4.9.0.80
+numpy==1.26.4
+Pillow==10.3.0
+werkzeug==3.0.3
+requests==2.32.3

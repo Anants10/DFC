@@ -1,0 +1,41 @@
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#003087;--navy-d:#001f5c;--navy-l:#1a4aaa;
+  --saffron:#FF6600;--green-in:#138808;
+  --bg:#eef1f7;--surface:#ffffff;
+  --border:#d0d8e8;--border-s:#e8edf6;
+  --danger:#cc1f1f;--danger-bg:#fdf0f0;--danger-br:#f5c6c6;
+  --success:#1a7a3f;--success-bg:#f0faf4;--success-br:#b6e5cb;
+  --warn:#b45309;--warn-bg:#fffbeb;--warn-br:#fde68a;
+  --text:#0f1c3f;--text-2:#4a5568;--text-m:#8898aa;
+  --font-h:'Rajdhani',sans-serif;--font-b:'Source Sans 3',sans-serif;
+  --r-sm:6px;--r-md:10px;--r-lg:14px;
+  --sh-sm:0 1px 3px rgba(0,48,135,.08),0 1px 2px rgba(0,48,135,.04);
+  --sh-md:0 4px 16px rgba(0,48,135,.10);
+  --tr:.22s ease;
+}
+[data-theme="dark"]{
+  --bg:#0d1117;--surface:#161b22;--border:#30363d;--border-s:#21262d;
+  --text:#e6edf3;--text-2:#8b949e;--text-m:#6e7681;
+  --danger-bg:#1c0a0a;--success-bg:#0a1c0f;
+  --sh-sm:0 1px 4px rgba(0,0,0,.5);--sh-md:0 4px 16px rgba(0,0,0,.6);
+}
+[data-theme="dark"] h1,[data-theme="dark"] h2,[data-theme="dark"] h3{color:#58a6ff}
+[data-theme="dark"] th{background:#1e2d42!important;color:#e6edf3!important}
+[data-theme="dark"] td{border-color:var(--border-s)!important}
+[data-theme="dark"] input,[data-theme="dark"] select{
+  background:#0d1117!important;color:#e6edf3!important;border-color:#30363d!important}
+html{font-size:15px}
+body{font-family:var(--font-b);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6;transition:background var(--tr),color var(--tr)}
+h1,h2,h3,h4,h5{font-family:var(--font-h);font-weight:700;color:var(--navy);line-height:1.2}
+button{cursor:pointer;font-family:var(--font-b)}
+input,select,textarea{font-family:var(--font-b)}
+a{color:var(--navy)}
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes modalIn{from{opacity:0;transform:translate(-50%,-50%) scale(.96)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+@keyframes slideIn{from{opacity:0;transform:translateX(60px) scale(.94)}to{opacity:1;transform:none}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}

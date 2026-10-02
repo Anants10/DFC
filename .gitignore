@@ -1,0 +1,30 @@
+# Node
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+
+# Python
+flask-ml/venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Uploads (models and crack images - too large for git)
+flask-ml/uploads/models/*.keras
+flask-ml/uploads/models/*.h5
+flask-ml/uploads/detected_cracks/*.jpg
+
+# .NET build output
+flir-service/bin/
+flir-service/obj/
+
+# FLIR SDK DLLs - copy manually from Atlas SDK installation
+flir-service/libs/*.dll
+!flir-service/libs/.gitkeep
+
+# Environment (contains passwords)
+backend/.env
+
+# Build output
+frontend/dist/
+*.log

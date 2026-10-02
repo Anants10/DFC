@@ -1,0 +1,62 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <RootNamespace>FlirBridge</RootNamespace>
+    <AssemblyName>FlirBridge</AssemblyName>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Platforms>x64</Platforms>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <!-- Copy Atlas SDK DLLs to output automatically -->
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+
+  <!--
+    ══════════════════════════════════════════════════════════════════
+    Atlas SDK DLL References
+    ══════════════════════════════════════════════════════════════════
+    Copy these three DLLs from your Atlas SDK installation into the
+    flir-service/libs/ folder before building:
+
+      Source (typical Atlas SDK install path):
+        C:\Program Files\FLIR Systems\Atlas SDK\Bin\x64\Release\
+
+      Files needed:
+        Flir.Atlas.Image.dll
+        Flir.Atlas.Live.dll
+        Flir.Atlas.Gigevision.dll
+
+      Also copy all *.dll files from that same folder into libs/
+      (native dependencies: AtlasCronos.dll, etc.)
+    ══════════════════════════════════════════════════════════════════
+  -->
+  <ItemGroup>
+    <Reference Include="Flir.Atlas.Image">
+      <HintPath>libs\Flir.Atlas.Image.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="Flir.Atlas.Live">
+      <HintPath>libs\Flir.Atlas.Live.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="Flir.Atlas.Gigevision">
+      <HintPath>libs\Flir.Atlas.Gigevision.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!-- Copy all native DLLs from libs/ to build output -->
+  <ItemGroup>
+    <None Include="libs\*.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.0" />
+    <PackageReference Include="System.Drawing.Common" Version="9.0.0" />
+  </ItemGroup>
+
+</Project>

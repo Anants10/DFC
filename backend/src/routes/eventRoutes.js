@@ -1,0 +1,12 @@
+'use strict';
+const { Router } = require('express');
+const c = require('../controllers/eventController');
+const r = Router();
+r.get('/',         c.getEvents);
+r.get('/stats',    c.getStats);
+r.get('/:id/report',  c.getEventReport);
+r.post('/:id/report', c.attachEventReport);
+r.post('/',        c.createEvent);
+r.delete('/all',   c.clearAll);
+r.delete('/:id',   c.deleteEvent);
+module.exports = r;
